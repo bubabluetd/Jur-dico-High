@@ -1,0 +1,553 @@
+<html lang="pt-br"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora Penal</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script><style type="text/css" id="operaUserStyle"></style>
+</head>
+
+<body>
+        <main>
+                <nav></nav>
+                <div id="dropdownDiv">
+                        <div id="dropdown">
+                                <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
+                                <div id="myDropdown" class="dropdown-content">
+                                        <input type="text" placeholder="Buscar artigo" id="searchArtigo" onkeyup="filterFunction()" onfocus="showList()">
+                                        <div id="optionsList" style="display: none;">
+                                                <a class="option" href="#" onclick="calcAdd('1 - Prisão Militar ', 100, 0, -99999)">1 -
+                                                        Prisão Militar </a>
+                                                <a class="option" href="#" onclick="calcAdd('2 - Prevaricação', 150, 100, -99999)">2 -
+                                                        Prevaricação</a>
+                                                <a class="option" href="#" onclick="calcAdd('3 - Invasão de departamento policial', 300, 200, -99999)">3
+                                                        - Invasão de departamento policial</a>
+                                                <a class="option" href="#" onclick="calcAdd('4 - Homicidio Qualificado', 80, 50, -99999)">4
+                                                        - Homicidio Qualificado</a>
+                                                <a class="option" href="#" onclick="calcAdd('5 - Tentativa de Homicidio', 40, 25, -99999)">5 -
+                                                        Tentativa de Homicidio</a>
+                                                <a class="option" href="#" onclick="calcAdd('6 - Perjurio', 10, 31.500, -99999)">6 - Perjurio</a> 
+                                                <a class="option" href="#" onclick="calcAdd('7 - Sequestro', 20, 15, -99999)"> 7 -
+                                                        Sequestro</a>
+                                                <a class="option" href="#" onclick="calcAdd('8 - Receptação de Veículos', 15, 7, -99999)">8 -
+                                                        Receptação de Veículos</a>
+                                                <a class="option" href="#" onclick="calcAdd('9 - Desobediencia', 15, 26.500, -99999)">9 - Desobediencia</a>
+                                                <a class="option" href="#" onclick="calcAdd('10 - Obstrução de Justiça', 10, 21.500, -99999)">10 - Obstrução de Justiça</a>
+                                                <a class="option" href="#" onclick="calcAdd('11 - Desacato 1', 35, 11.500, -99999)">11 -
+                                                        Desacato 1</a>
+                                                <a class="option" href="#" onclick="calcAdd('12 - Desacato 2', 35, 11.500, -99999)">12 - Desacato 2</a>
+                                                <a class="option" href="#" onclick="calcAdd('13 - Desacato 3', 35, 11.500, -99999)">13 -
+                                                        Desacato 3</a>
+                                                <a class="option" href="#" onclick="calcAdd('14 - Desacato 4', 35, 11.500, -99999)">14
+                                                        - Desacato 4</a>
+                                                <a class="option" href="#" onclick="calcAdd('15 - Azaralhamento', 100, 100, 135)">15
+                                                        - Azaralhamento</a>
+                                                <a class="option" href="#" onclick="calcAdd('16 - Lesão Corporal', 15, 15, 45)">16 -
+                                                        Lesão Corporal</a>
+                                                <a class="option" href="#" onclick="calcAdd('17 - Carcere Privado', 20, 20, 45)">17
+                                                        - Carcere Privado</a>
+                                                <a class="option" href="#" onclick="calcAdd('18 - Furto', 15, 8, 15)">18 -
+                                                        Furto</a>
+                                                <a class="option" href="#" onclick="calcAdd('19 - Tentativa de Furto', 10, 10, 25)">19
+                                                        - Tentativa de Furto</a>
+                                                <a class="option" href="#" onclick="calcAdd('20 - Furto de Veículos', 30, 7.500, 25)">20 -
+                                                        Furto de Veículos</a>
+                                                <a class="option" href="#" onclick="calcAdd('21 - Invasão de Propriedade', 25, 10, 30)">21 -
+                                                        Invasão de Propriedade</a>
+                                                <a class="option" href="#" onclick="calcAdd('22 - Apropriação Indebita', 10, 7, 15)">22 -
+                                                        Apropriação Indebita</a>
+                                                <a class="option" href="#" onclick="calcAdd('23 - Roubo', 30, 100, 130)">23
+                                                        - Roubo</a>
+                                                <a class="option" href="#" onclick="calcAdd('24 - Furto a Caixa Eletronico', 15, 5, 35)">24 -
+                                                       Furto a Caixa Eletronico</a>
+                                                <a class="option" href="#" onclick="calcAdd('25 - Extorsão', 25, 7, 30)">25
+                                                        - Extorsão</a>
+                                                <a class="option" href="#" onclick="calcAdd('26 - Trafico de Armas', 40, 35, 65)">26 -
+                                                        Trafico de Armas</a>
+                                                <a class="option" href="#" onclick="calcAdd('27 - Porte de Arma Pesada', 30, 20, 45)">27
+                                                        - Porte de Arma Pesada</a>
+                                                <a class="option" href="#" onclick="calcAdd('28 - Porte de Arma Leve', 20, 10, 20)">28
+                                                        - Porte de Arma Leve</a>
+                                                <a class="option" href="#" onclick="calcAdd('29 - Posse de Munição (-100)', 15, 10, 20)">29
+                                                        - Posse de Munição (-100)</a>
+                                                <a class="option" href="#" onclick="calcAdd('30 - Posse de Arma Branca', 15, 5, 25)">30
+                                                        - Posse de Arma Branca</a>
+                                                <a class="option" href="#" onclick="calcAdd('31 - Trafico de Munições (+100)', 30, 15, 40)">31 -
+                                                        Trafico de Munições (+100)</a>
+                                                <a class="option" href="#" onclick="calcAdd('32 - Trafico de Equipamento Balístico', 30, 25, 50)">32
+                                                        - Trafico de Equipamento Balístico</a>
+                                                <a class="option" href="#" onclick="calcAdd('33 - Aviãozinho (6 a 100 UND)', 15, 20, 45)">33
+                                                        - Aviãozinho (6 a 100 UND)</a>
+                                                <a class="option" href="#" onclick="calcAdd('34 - Posse de Drogas (1 a 5 UND)', 0, 10, -99999)">34
+                                                        -  Posse de Drogas (1 a 5 UND)</a>
+                                                <a class="option" href="#" onclick="calcAdd('35 - Trafico de Drogas (+100)', 25, 35, 65)">35
+                                                        - Trafico de Drogas (+100)</a>
+                                                <a class="option" href="#" onclick="calcAdd('36 - Associação ao Tráfico', 35, 50, 80)">36 -
+                                                        Associação ao Tráfico</a>
+                                                <a class="option" href="#" onclick="calcAdd('37 - Dinheiro Sujo', 25, 500, 500)">37
+                                                        - Dinheiro Sujo</a>
+                                                <a class="option" href="#" onclick="calcAdd('38 - Falsidade Ideológica ', 20, 31.500, 71.500)">38
+                                                        - Falsidade Ideológica</a>
+                                                <a class="option" href="#" onclick="calcAdd('39 - Formação de quadrilha', 50, 46.500, 81.500)">39
+                                                        - Formação de quadrilha</a>
+                                                <a class="option" href="#" onclick="calcAdd('40 - Associação Criminosa', 25, 21.500, 41.500)">40
+                                                        - Associação Criminosa</a>
+                                                <a class="option" href="#" onclick="calcAdd('41 - Difamação', 10, 21.500, 51.500)">41 - Difamação</a>
+                                                <a class="option" href="#" onclick="calcAdd('42 - Injuria', 10, 21.500, 51.500)">42 - Injuria</a>
+                                                <a class="option" href="#" onclick="calcAdd('43 - Calunia', 10, 21.500, 51.500)">43 -
+                                                        Calunia</a>
+                                                <a class="option" href="#" onclick="calcAdd('44 - Ameaça', 25, 11.500, 31.500)">44
+                                                        - Ameaça</a>
+                                                <a class="option" href="#" onclick="calcAdd('45 - Uso Indevido do 190/192', 10, 11.500, 26.500)">45
+                                                        - Uso Indevido do 190/192</a>
+                                                <a class="option" href="#" onclick="calcAdd('46 - Posse de Itens Ilegais', 25, 16.500, 26.500)">46 -
+                                                        Posse de Itens Ilegais</a>
+                                                <a class="option" href="#" onclick="calcAdd('47 - Assédio', 300, 101.500, 1.251.500,00)">47 -
+                                                        Assédio</a>
+                                                <a class="option" href="#" onclick="calcAdd('48 - Atentado ao Pudor', 50, 51.500, 66.500)">48 -
+                                                       Atentado ao Pudor</a>
+                                                <a class="option" href="#" onclick="calcAdd('49 - Suborno', 25, 11.500, 31.500)">49 -
+                                                        Suborno</a>
+                                                <a class="option" href="#" onclick="calcAdd('50 - Vandalismo', 20, 16.500, 26.500)">50
+                                                        - Vandalismo</a>
+                                                <a class="option" href="#" onclick="calcAdd('51 - Danos ao Patrimonio Publico', 10, 21.500, 41.500)">51
+                                                        - Danos ao Patrimonio Publico</a>
+                                                <a class="option" href="#" onclick="calcAdd('52 - Abuso de Autoridade', 25, 51.500, 66.500)">52
+                                                        - Abuso de Autoridade</a>
+                                                <a class="option" href="#" onclick="calcAdd('53 - Uso de Mascara', 5, 11.500, 16.500)">53
+                                                        - Uso de Mascara (+200)</a>
+                                                <a class="option" href="#" onclick="calcAdd('54 - Uso de Equipamento Restrito', 10, 11.500, 31.500)">54
+                                                        - Uso de Equipamento Restrito</a>
+                                                <a class="option" href="#" onclick="calcAdd('55 - Apologia ao Crime', 20, 11.500, 16.500)">55
+                                                        - Apologia ao Crime</a>
+                                                <a class="option" href="#" onclick="calcAdd('56 - Incitação ao Crime', 10, 11.500, 16.500)">56
+                                                        - Incitação ao Crime (+100)</a>
+                                                <a class="option" href="#" onclick="calcAdd('57 - Falsa Comunicação de Crime', 10, 11.500, 16.500)">57
+                                                        - Falsa Comunicação de Crime</a>
+                                                <a class="option" href="#" onclick="calcAdd('58 - Vadiagem', 10, 6.500, 11.500)">58
+                                                        - Vadiagem (+100)</a>
+                                                <a class="option" href="#" onclick="calcAdd('59 - Intoxcicação Publica', 10, 5.500, 11.500)">59
+                                                        - Intoxcicação Publica</a>
+                                                <a class="option" href="#" onclick="calcAdd('60 - Perturbação da Ordem', 0, 6.500, 1.500)">60
+                                                        - Perturbação da Ordem</a>
+                                                <a class="option" href="#" onclick="calcAdd('61 - Perturbação do Sossego Alheio', 10, 11.500, 16.500)">61
+                                                        - Perturbação do Sossego Alheio</a>
+                                                <a class="option" href="#" onclick="calcAdd('62 - Omissão de Socorro', 10, 0, 11.500)">62
+                                                        - Omissão de Socorro</a>
+                                                <a class="option" href="#" onclick="calcAdd('63 - Trafico de Influência', 15, 31.500, 51.500)">63
+                                                        - Trafico de Influência</a>
+                                                <a class="option" href="#" onclick="calcAdd('64 - Tentativa de Fuga', 20, 11.500, 16.500)">64
+                                                        - Tentativa de Fuga</a>
+                                                <a class="option" href="#" onclick="calcAdd('65 - Condução e Imprudente', 0, 11.500, 1.500)">65
+                                                        - Condução e Imprudente</a>
+                                                <a class="option" href="#" onclick="calcAdd('66 - Dirigir na Contramão', 0, 11.500, 1.500)">66
+                                                        - Dirigir na Contramão</a>
+                                                <a class="option" href="#" onclick="calcAdd('67 - Alta Velocidade', 0, 11.500, 1.500)">67
+                                                        - Alta Velocidade</a>
+                                                <a class="option" href="#" onclick="calcAdd('68 - Poluição Sonora', 10, 11.500, 16.500)">68
+                                                        - Poluição Sonora</a>
+                                                <a class="option" href="#" onclick="calcAdd('69 - Corridas Ilegais', 15, 11.500, 31.500)">69
+                                                        - Corridas Ilegais</a>
+                                                <a class="option" href="#" onclick="calcAdd('70 - Sem Capacete', 0, 11.500, 1.500)">70
+                                                        - Sem Capacete</a>
+                                                <a class="option" href="#" onclick="calcAdd('71 - Uso Excessivo de Insulfilm', 0, 11.500, 1.500)">71
+                                                        - Uso Excessivo de Insulfilm</a>
+                                                <a class="option" href="#" onclick="calcAdd('72 - Mal Estado de Conservação do Veículo', 0, 11.500, 1.500)">72
+                                                        - Mal Estado de Conservação do Veículo</a>
+                                                <a class="option" href="#" onclick="calcAdd('73 - Veículo Ilegalmente Estacionado', 0, 11.500, 1.500)">73
+                                                        - Veículo Ilegalmente Estacionado</a>
+                                                <a class="option" href="#" onclick="calcAdd('74 - Homicidio Culposo no Transito', 20, 46.500, 61.500)">74
+                                                        - Homicidio Culposo no Transito</a>
+                                                <a class="option" href="#" onclick="calcAdd('75 - Resistencia a Prisão', 10, 11.500, 16.500)">75
+                                                        - Resistencia a Prisão</a>
+                                                <a class="option" href="#" onclick="calcAdd('76 - Réu Reincidente', 10, 1.500, 3.000)">76
+                                                        - Réu Reincidente</a>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="artigos">
+                                <span id="baseBox"></span>
+
+                        </div>
+                </div>
+                <div id="resultsDiv">
+                        <div id="text">
+                                <p>Desconto:
+                                        <span class="highlight">
+                                                <input type="number" name="desconto" id="desconto" min="0" max="100" step="10" value="0" onchange="addDesconto('meses')">%
+                                        </span>
+                                </p>
+                                <p>Total de meses:
+                                        <span id="mesesSpan" class="highlight">0</span>
+                                </p>
+                                <p>Multa:
+                                        <span id="multaSpan" class="highlight">0k</span>
+                                </p>
+                                <hr>
+                                <p>Desconto fiança:
+                                        <span class="highlight">
+                                                <input type="number" name="descontoFianca" id="descontoFianca" min="0" max="100" step="10" value="0" onchange="addDesconto('fianca')">%
+                                        </span>
+                                </p>
+                                <p>Fiança:
+                                        <span id="fiancaSpan" class="highlight">0k</span>
+                                </p>
+                        </div>
+                        <button id="copy" onclick="genPrender()">Copiar /prender</button>
+                </div>
+        </main>
+        <p id="version">v1.3.6</p>
+
+
+<script>
+
+        function filterFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("searchArtigo");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("optionsList");
+                a = div.getElementsByTagName("a");
+                for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                        } else {
+                                a[i].style.display = "none";
+                        }
+                }
+        }
+
+        function showList() {
+                document.querySelector("#optionsList").style.display = "block"
+        }
+
+
+        desconto = 0
+        multaTotal = 0
+        mesesTotal = 0
+        fiancaTotal = 0
+
+        multaDesconto = 0
+        mesesDesconto = 0
+        fiancaDesconto = 0
+
+
+        function addDesconto(tipo) {
+                if (tipo == "meses") {
+                        desconto = document.querySelector("#desconto").value
+
+                        mesesDesconto = Math.floor(mesesTotal * (1 - (desconto / 100)))
+                        multaDesconto = Math.floor(multaTotal * (1 - (desconto / 100)))
+
+
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal} (${mesesDesconto})`
+                        document.getElementById("multaSpan").innerHTML = `${multaTotal}k (${multaDesconto}k)`
+                }
+                else if (tipo == "fianca") {
+                        desconto = document.querySelector("#descontoFianca").value
+                        fiancaDesconto = Math.floor(fiancaTotal * (1 - (desconto / 100)))
+
+                        if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k (${fiancaDesconto}k)`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+        }
+
+        function removeArtigo(id) {
+                auxMeses = 0 - Number(document.getElementById(`mesesID${id}`).textContent)
+                auxMulta = 0 - Number(document.getElementById(`multaID${id}`).textContent)
+                auxFianca = 0 - Number(document.getElementById(`fiancaID${id}`).textContent.substring(0, (document.getElementById(`fiancaID${id}`).textContent.length) - 1))
+                if (Number.isNaN(auxFianca)) { auxFianca = 99999 }
+                calcAdd(-1, auxMeses, auxMulta, auxFianca)
+                document.getElementById(`art${id}`).remove()
+        }
+
+
+        function calcAdd(artigo, meses, multa, fianca) {
+                /**
+                 * @param artigo
+                 * @param meses
+                 * @param multa
+                 * @param fianca
+                 */
+
+                id = Number(artigo[0])
+
+                if (id > 0) {
+
+                        document.getElementById("baseBox").insertAdjacentHTML("afterend", `<div id="art${id}" class="box">
+                    <div class="boxTop">
+                        <p>${artigo}</p>
+                        <a href="#" onclick="removeArtigo(${id})" class="rmBtn">Remover</a>
+                    </div>
+                    <div class="penaArtigo">
+                        <p>Meses: <span class="highlight" id='mesesID${id}'>${meses}</span></p>
+                        <p>Multa: <span class="highlight" id='multaID${id}'>${multa}</span>k</p>
+                        <p>Fiança: <span class="highlight" id='fiancaID${id}'>${(fianca == -99999) ? 'Sem direito' : fianca + 'k'}</span></p>
+                    </div>
+                </div>`)
+                }
+                else if (id == -1) pass
+
+
+                multaTotal = multaTotal + multa
+                mesesTotal = mesesTotal + meses
+                fiancaTotal = fiancaTotal + fianca
+
+                if (desconto <= 0) {
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal}`
+                        document.getElementById("multaSpan").innerHTML = `${multaTotal}k`
+
+                        if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+                else if (desconto > 0) {
+                        mesesDesconto = Math.floor(mesesTotal * (1 - (desconto / 100)))
+                        multaDesconto = Math.floor(multaTotal * (1 - (desconto / 100)))
+
+                        document.getElementById("mesesSpan").innerHTML = `${mesesTotal} (${mesesDesconto})`
+                        document.getElementById("multaSpan").innerHTML = `${multaTotal}k (${multaDesconto})`
+
+                        if (fiancaTotal >= 0 && fiancaDesconto != 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k (${fiancaDesconto}k)`
+                        } else if (fiancaTotal >= 0) {
+                                document.getElementById("fiancaSpan").innerHTML = `${fiancaTotal}k`
+                        } else {
+                                document.getElementById("fiancaSpan").innerHTML = `Sem direito`
+                        }
+                        document.querySelector("#optionsList").style.display = "none"
+                }
+
+                document.querySelector("#searchArtigo").value = ""
+                filterFunction()
+        }
+
+        async function genPrender() {
+                try {
+                        await navigator.clipboard.writeText(`prender {id} ${mesesDesconto || mesesTotal} ${(multaDesconto * 1000) || (multaTotal * 1000)}`);
+                }
+                catch (e) {
+                        console.log(e);
+                }
+        }
+
+</script>
+
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        #searchArtigo {
+                box-sizing: border-box;
+                font-size: 16px;
+                padding: 1rem 2rem;
+                border: 2px solid #FFFFFF;
+                border-radius: 15px;
+                background-color: #000000;
+                width: 100%;
+        }
+
+        #searchArtigo:focus {
+                outline: none;
+                color: #ffff;
+        }
+
+        .dropdown {
+                position: relative;
+                display: inline-block;
+        }
+
+        .dropdown-content {
+                position: absolute;
+                min-width: 41vw;
+                overflow: auto;
+                z-index: 1;
+        }
+
+        #optionsList {
+                display: none;
+                background-color: #000000;
+                max-height: 50vh;
+                overflow-y: scroll;
+
+        }
+
+        #optionsList a {
+                text-decoration: none;
+                color: #FFF;
+                display: block;
+                padding: 1rem .5rem;
+        }
+
+        #optionsList a:hover {
+                background-color: #FFD500;
+                color: #000A1A;
+        }
+
+        /* #searchArtigo:focus+#optionsList {
+    display: block
+} */
+        hr {
+                background-color: #FFD500;
+                border-radius: 25px;
+                border: 2px solid #000000;
+        }
+
+        .boxTop {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+        }
+
+        .rmBtn {
+                display: inline;
+                color: #ffff;
+                text-decoration: none;
+                border: 2px solid red;
+                background-color: red;
+                padding: .3rem 1rem;
+                border-radius: 15px;
+        }
+
+        #desconto,
+        #descontoFianca {
+                background-color: transparent;
+                border: none;
+                color: #FFD500;
+                font-size: 35px;
+                font-family: inter;
+                font-weight: 600;
+                width: 5rem;
+                text-align: end;
+        }
+
+        #desconto:focus,
+        #descontoFianca:focus {
+                outline: none;
+        }
+
+
+
+        body {
+                transition: .3s;
+                background-image: url("https://cdn.discordapp.com/attachments/1225886966051246191/1225909400645009519/Wallpaper_-_High_RP_PC_-_pt.png?ex=6660ce99&is=665f7d19&hm=52ad70173c7f6d9ebd5dc8fb3e3022112bc24cfd8c3b4cf1f6a7dab678d09363&");
+                color: #FFFF;
+                display: flex;
+                flex-direction: row;
+                width: 99vw;
+                height: 95vh;
+                flex-wrap: nowrap;
+                font-family: inter;
+        }
+
+        main {
+                display: flex;
+                flex-direction: row;
+                width: 99vw;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                gap: 6rem;
+        }
+
+        #dropdownDiv {
+                width: 45%;
+        }
+
+        .highlight {
+                color: #FFD500;
+        }
+
+        #copy {
+                border: 2px solid #FFFFFF;
+                background-color: #FFD500;
+                color: #000A1A;
+                border-radius: 15px;
+                padding: 1rem 2rem;
+                font-family: Inter;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+        }
+
+        #text p {
+                color: #FFF;
+                font-family: Inter;
+                font-size: 35px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+        }
+
+        #resultsDiv {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+        }
+
+        .box {
+                border-radius: 16px;
+                background-color: #000000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1rem 2rem;
+                width: 85%;
+                margin-bottom: 1rem;
+        }
+
+        .penaArtigo {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+        }
+
+        #artigos {
+                height: 50vh;
+                overflow-y: scroll;
+                margin-top: 8vh;
+        }
+
+
+
+
+        /* width */
+        ::-webkit-scrollbar {
+                width: 7px;
+                height: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+                background: #000000;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+                background: #FFFFFF;
+                border-radius: 40px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+                background: #FFFFFF;
+        }
+
+        #version {
+                position: absolute;
+                bottom: 1vh;
+                right: 1vw;
+                color: #818181;
+        }
+</style>
+
+
+</body></html>
